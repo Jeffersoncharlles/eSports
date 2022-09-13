@@ -1,0 +1,7 @@
+.container strong {
+    @apply text-2xl text-white font-black block;
+}
+
+.container span {
+    @apply text-zinc-400 block mt-1;
+}

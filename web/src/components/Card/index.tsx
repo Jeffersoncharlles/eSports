@@ -1,10 +1,18 @@
 import styles from './styles.module.scss'
 
-export const Card = () => {
+interface Props {
+
+}
+
+export const Card = ({ }: Props) => {
 
     return (
-        <a className={styles.container}>
-            <img src="" alt="" />
+        <a href='' className={styles.container}>
+            <img src="/game3.png" alt="" />
+            <div>
+                <strong>Counter Strike</strong>
+                <span>4 anúncios</span>
+            </div>
         </a>
     );
 }
