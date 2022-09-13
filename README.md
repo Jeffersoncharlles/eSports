@@ -49,6 +49,9 @@ This Mobile project was developed using the following technologies:
 -   [Typescript][typescript]
 -   [Expo][expo]
 -   [Phosphor Icons][phosphoricons]
+-   [Expo Linear Gradient][expo-linear-gradient]
+-   [Expo Font][expo-font]
+
 
 This project in under MIT license, for more details check in [LICENSE][license]. <br>
 Feel free to bring new features or fix problems, it will be a pleasure! 💜
@@ -69,6 +72,8 @@ Feel free to bring new features or fix problems, it will be a pleasure! 💜
 [tailwindcss]: https://tailwindcss.com/
 [react-hook-form]: https://react-hook-form.com/
 [sass]: https://sass-lang.com/
+[expo-font]: https://www.npmjs.com/package/expo-font
+[expo-linear-gradient]: https://www.npmjs.com/package/expo-linear-gradient
 [axios]: https://axios-http.com/docs/intro
 [prismic]: https://prismic.io/
 [stripe]: https://stripe.com/br
