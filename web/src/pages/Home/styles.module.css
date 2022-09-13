@@ -1,0 +1,16 @@
+.container {
+    @apply max-w-[1344px] mx-auto flex items-center flex-col my-20;
+}
+
+.title {
+    @apply text-6xl text-white font-black mt-20;
+}
+
+.title span {
+    @apply text-transparent bg-nlw-gradient bg-clip-text;
+}
+
+
+.cardContainer {
+    @apply grid grid-cols-6 gap-6 mt-16;
+}
