@@ -2,7 +2,7 @@ import express from 'express'
 import { Routes } from './routes/index'
 
 
-const PORT = 3333
+const PORT = process.env.PORT_URL || 3333
 
 const app = express()
 app.use(express.json())
