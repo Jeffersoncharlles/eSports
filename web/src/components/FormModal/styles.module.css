@@ -1,0 +1,16 @@
+/*formulário tudo aqui para baixo*/
+.form {
+    @apply mt-8
+}
+
+
+.form_name {
+    @apply flex flex-col gap-2
+}
+
+.form_name label{
+    @apply font-semibold
+}
+.form_name input {
+    @apply bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500
+}

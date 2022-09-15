@@ -20,3 +20,61 @@
 .description {
 
 }
+
+
+/*formulário tudo aqui para baixo*/
+.form {
+    @apply mt-8 flex flex-col gap-4
+}
+
+.form_game,
+.form_name,
+.form_year,
+.form_discord,
+.form_week,
+.form_duration{
+    @apply flex flex-col gap-2
+}
+
+.form_name label{
+    @apply font-semibold
+}
+.form_year_discord{
+    @apply grid grid-cols-2 gap-6;
+}
+.form_gameDuration{
+    @apply flex gap-6;
+}
+
+.form_duration{
+    @apply flex-1;
+}
+.form_duration_time{
+    @apply grid grid-cols-2 gap-2
+}
+
+.form_week_buttons{
+    @apply grid grid-cols-4 gap-2
+}
+
+.form_week_button{
+    @apply w-8 h-8 rounded bg-zinc-900
+}
+
+.form_checkbox{
+    @apply mt-2 flex gap-2 text-sm
+}
+
+
+.form_footer_buttons{
+    @apply mt-4 flex justify-end gap-4
+}
+
+.form_footer_cancel{
+    all: 'unset';
+    @apply bg-zinc-500 px-5 h-12 rounded-md font-semibold hover:bg-zinc-600
+}
+.form_footer_submit{
+
+    @apply  bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-3
+}

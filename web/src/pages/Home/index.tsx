@@ -27,7 +27,7 @@ export const Home = () => {
                 <div className={styles.cardBoxWrapperGradient}>
                     <div className={styles.carBoxContainer}>
                         <Box />
-                        <Dialog.Trigger className={styles.buttonPublish}>
+                        <Dialog.Trigger type='button' className={styles.buttonPublish}>
                             <MagnifyingGlassPlus size={24} />
                             Publicar anúncio
                         </Dialog.Trigger>
