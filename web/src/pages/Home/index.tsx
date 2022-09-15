@@ -4,7 +4,8 @@ import { Box } from '../../components/Box';
 import { MagnifyingGlassPlus } from 'phosphor-react';
 import { Card } from '../../components/Card';
 import { useGame } from '../../context/GameContext';
-import { useState } from 'react';
+import * as Dialog from '@radix-ui/react-dialog'
+import { ModalAd } from '../../components/ModalAd';
 
 export const Home = () => {
     const { games, isLoading } = useGame()
@@ -22,16 +23,20 @@ export const Home = () => {
                 </div>
             )}
 
-            <div className={styles.cardBoxWrapperGradient}>
-                <div className={styles.carBoxContainer}>
-                    <Box />
-
-                    <button className={styles.buttonPublish}>
-                        <MagnifyingGlassPlus size={24} />
-                        Publicar anúncio
-                    </button>
+            <Dialog.Root>
+                <div className={styles.cardBoxWrapperGradient}>
+                    <div className={styles.carBoxContainer}>
+                        <Box />
+                        <Dialog.Trigger className={styles.buttonPublish}>
+                            <MagnifyingGlassPlus size={24} />
+                            Publicar anúncio
+                        </Dialog.Trigger>
+                    </div>
                 </div>
-            </div>
+
+
+                <ModalAd />
+            </Dialog.Root>
         </div>
     );
 }

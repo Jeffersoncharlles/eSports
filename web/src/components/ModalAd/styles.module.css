@@ -1,0 +1,22 @@
+.container {}
+
+.overlay {
+    @apply bg-black/60 inset-0 fixed;
+}
+
+
+.content {
+    @apply fixed bg-[#2A2634] py-8 px-10 text-white
+    top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25;
+    /*top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 */
+    /*deixar no centro da tela pelo tailwind*/
+}
+
+.title {
+    @apply text-3xl text-white font-black
+}
+
+
+.description {
+
+}

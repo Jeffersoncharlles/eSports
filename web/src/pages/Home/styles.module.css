@@ -28,7 +28,7 @@
 }
 
 .boxContainer div span {
-    @apply text-zinc-300 text-sm block ;
+    @apply text-zinc-300 text-sm block;
 }
 
 
