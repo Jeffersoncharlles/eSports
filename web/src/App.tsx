@@ -1,3 +1,4 @@
+import { GameProvider } from "./context/GameContext"
 import { Home } from "./pages/Home"
 
 
@@ -6,7 +7,9 @@ function App() {
 
   return (
     <>
-      <Home />
+      <GameProvider>
+        <Home />
+      </GameProvider>
     </>
   )
 }

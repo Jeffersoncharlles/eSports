@@ -1,17 +1,25 @@
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
+
 
 interface Props {
-
+    game: {
+        id: string;
+        title: string;
+        bannerUrl: string;
+        _count: {
+            ads: number
+        };
+    }
 }
 
-export const Card = ({ }: Props) => {
+export const Card = ({ game }: Props) => {
 
     return (
         <a href='' className={styles.container}>
-            <img src="/game3.png" alt="" />
+            <img src={game.bannerUrl} alt="" />
             <div>
-                <strong>Counter Strike</strong>
-                <span>4 anúncios</span>
+                <strong>{game.title}</strong>
+                <span>{game._count.ads} anúncios</span>
             </div>
         </a>
     );
