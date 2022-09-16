@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         borderRadius: 8,
         overflow: 'hidden',
+        resizeMode: 'cover'
     },
     footer: {
         width: '100%',
