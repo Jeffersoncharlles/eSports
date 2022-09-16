@@ -5,7 +5,7 @@ interface GameContextProps {
     games: GameProps[]
 }
 
-interface GameProps {
+export interface GameProps {
     id: string;
     title: string;
     bannerUrl: string;
