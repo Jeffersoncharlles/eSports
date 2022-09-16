@@ -2,7 +2,7 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Entypo } from '@expo/vector-icons'
-import { FlatList, Image, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 
 import { GameParams } from '../../@types/navigation';
 import { Background } from '../../components/Background';
@@ -68,7 +68,12 @@ export const Game = () => {
                     )}
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={styles.contentList}
+                    contentContainerStyle={[styles.contentList, gameAds.length === 0 && { flex: 1, alignItems: 'center', justifyContent: 'center' }]}
+                    ListEmptyComponent={() => (
+                        <Text style={styles.emptyListText}>
+                            Não há anúncios publicados ainda...
+                        </Text>
+                    )}
                 />
 
             </SafeAreaView>
