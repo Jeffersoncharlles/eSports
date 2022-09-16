@@ -1,17 +1,22 @@
 
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Entypo } from '@expo/vector-icons'
+import { Image, TouchableOpacity, View } from 'react-native';
+
+import { GameParams } from '../../@types/navigation';
 import { Background } from '../../components/Background';
 import { styles } from './styles';
-import { GameParams } from '../../@types/navigation';
-import { Image, TouchableOpacity, View } from 'react-native';
-import { Entypo } from '@expo/vector-icons'
 import { THEME } from '../../theme';
 import logoImg from '../../assets/logo-nlw-esports.png'
 import { Heading } from '../../components/Heading';
+import { DouCard } from '../../components/DouCard';
+import { useGame } from '../../context/GameContext';
+import { useEffect } from 'react';
 
 
 export const Game = () => {
+    const { getListGameAds, gameAds } = useGame()
     const navigation = useNavigation()
     const route = useRoute()
 
@@ -20,6 +25,10 @@ export const Game = () => {
     const handleGoBack = () => {
         navigation.goBack()
     }
+
+    useEffect(() => {
+        getListGameAds(game.id)
+    }, [])
 
     return (
         <Background>
@@ -49,6 +58,8 @@ export const Game = () => {
                     title={game.title}
                     subtitle='Conecte-se e comece a jogar!'
                 />
+
+                <DouCard data={gameAds[0]} />
 
             </SafeAreaView>
         </Background>
