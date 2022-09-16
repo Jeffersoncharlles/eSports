@@ -12,14 +12,14 @@ import logoImg from '../../assets/logo-nlw-esports.png'
 import { Heading } from '../../components/Heading';
 import { DouCard } from '../../components/DouCard';
 import { useGame } from '../../context/GameContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ModalMatch } from '../../components/ModalMatch';
 
 
 export const Game = () => {
-    const { getListGameAds, gameAds } = useGame()
+    const { getListGameAds, gameAds, clearDiscordSelect, discordDuoSelected, getDiscordUser } = useGame()
     const navigation = useNavigation()
     const route = useRoute()
-
     const game = route.params as GameParams
 
     const handleGoBack = () => {
@@ -64,7 +64,7 @@ export const Game = () => {
                     data={gameAds}
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => (
-                        <DouCard data={item} onConnect={() => { }} />
+                        <DouCard data={item} onConnect={() => getDiscordUser(item.id)} />
                     )}
                     horizontal
                     showsHorizontalScrollIndicator={false}
@@ -74,6 +74,11 @@ export const Game = () => {
                             Não há anúncios publicados ainda...
                         </Text>
                     )}
+                />
+                <ModalMatch
+                    visible={discordDuoSelected.length > 0}
+                    discord={discordDuoSelected}
+                    onClose={clearDiscordSelect}
                 />
 
             </SafeAreaView>

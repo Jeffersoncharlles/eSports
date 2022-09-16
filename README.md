@@ -12,9 +12,9 @@ NLW eSports
   <a href="#key-license">License</a>
 </p>
 
-<!-- <h1 align='center'>
-  <img src='./screen/DIFikbwyeE.png' width="280">
-</h1> -->
+<h1 align='center'>
+  <img src='./screen/chrome_hXmfy3ARHs.gif' width="480">
+</h1>
 
 ## Getting Started
 
