@@ -1,9 +1,11 @@
-import { View, Modal, ModalProps, Text, TouchableOpacity } from 'react-native';
+import { View, Modal, ModalProps, Text, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
+import * as Clipboard from 'expo-clipboard';
 import { styles } from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CheckCircle, X } from 'phosphor-react-native';
 import { THEME } from '../../theme';
 import { Heading } from '../Heading';
+import { useState } from 'react';
 
 interface Props extends ModalProps {
     discord: string
@@ -11,6 +13,20 @@ interface Props extends ModalProps {
 }
 
 export const ModalMatch = ({ discord, onClose, ...rest }: Props) => {
+    const [isCopping, setIsCopping] = useState(false)
+
+    const handleCopyDiscordUser = async () => {
+        try {
+            setIsCopping(true)
+            await Clipboard.setStringAsync(discord)
+            Alert.alert('Discord Copiado!', 'Usuário copiado para area de transferência')
+            onClose()
+            setIsCopping(false)
+        } catch (error) {
+            Alert.alert('error', 'Ocorreu algum erro!')
+            setIsCopping(false)
+        }
+    }
 
     return (
         <Modal {...rest}
@@ -40,9 +56,11 @@ export const ModalMatch = ({ discord, onClose, ...rest }: Props) => {
                     </Text>
                     <TouchableOpacity
                         style={styles.discordButton}
+                        onPress={handleCopyDiscordUser}
+                        disabled={isCopping}
                     >
                         <Text style={styles.discord}>
-                            {discord}
+                            {isCopping ? <ActivityIndicator color={THEME.COLORS.PRIMARY} /> : discord}
                         </Text>
                     </TouchableOpacity>
                 </View>

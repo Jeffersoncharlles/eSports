@@ -14,6 +14,7 @@ NLW eSports
 
 <h1 align='center'>
   <img src='./screen/chrome_hXmfy3ARHs.gif' width="480">
+  <img src='./screen/qemu-system-x86_64_GdkHNPp5yn.gif' height="480">
 </h1>
 
 ## Getting Started
