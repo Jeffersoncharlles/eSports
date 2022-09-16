@@ -4,6 +4,7 @@ import { api } from "../lib/api";
 interface GameContextProps {
     games: GameProps[]
     isLoading: boolean
+    createAds: (data:any, weekDays:string[],useVoiceChannel:boolean)=>void
 }
 
 interface GameProps {
@@ -33,12 +34,26 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }
 
+    const createAds = async (data:any,weekDays:string[],useVoiceChannel:boolean)=>{
+
+
+        await api.post(`games/${data.game}/ads`,{
+            "name": data.name,
+            "yearsPlaying":Number(data.yearsPlaying),
+            "discord":data.discord,
+            "weekDays":weekDays,
+            "hourStart":data.hourStart,
+            "hourEnd":data.hourEnd,
+            "useVoiceChannel":useVoiceChannel
+        })
+    }
+
     useEffect(() => {
         getGames()
     }, [])
 
     return (
-        <GameContext.Provider value={{ games, isLoading }}>
+        <GameContext.Provider value={{ games, isLoading,createAds }}>
             {children}
         </GameContext.Provider>
     )

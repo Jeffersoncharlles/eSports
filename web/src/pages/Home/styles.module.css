@@ -40,7 +40,7 @@
     @apply bg-[#2A2634] px-8 py-6 flex justify-between items-center;
 }
 
-.buttonPublish{
-    @apply   py-3 px-4 bg-violet-500 text-white rounded hover:bg-violet-600 flex items-center gap-3;
+.buttonPublish {
+    @apply py-3 px-4 text-white rounded hover:bg-violet-600 flex items-center gap-3;
 
 }

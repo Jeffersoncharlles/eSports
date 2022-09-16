@@ -12,10 +12,10 @@ interface Props {
     }
 }
 
-export const Card = ({ game }: Props) => {
+export const Card = ({ game}: Props) => {
 
     return (
-        <a href='' className={styles.container}>
+        <a href='' className={styles.container} >
             <img src={game.bannerUrl} alt="" />
             <div>
                 <strong>{game.title}</strong>
