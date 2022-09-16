@@ -68,7 +68,7 @@ export const Game = () => {
                     )}
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={[styles.contentList, gameAds.length === 0 && { flex: 1, alignItems: 'center', justifyContent: 'center' }]}
+                    contentContainerStyle={[gameAds.length > 0 ? styles.contentList : { flex: 1, alignItems: 'center', justifyContent: 'center' }]}
                     ListEmptyComponent={() => (
                         <Text style={styles.emptyListText}>
                             Não há anúncios publicados ainda...
