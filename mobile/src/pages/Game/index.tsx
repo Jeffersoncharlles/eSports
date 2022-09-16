@@ -2,7 +2,7 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Entypo } from '@expo/vector-icons'
-import { Image, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, TouchableOpacity, View } from 'react-native';
 
 import { GameParams } from '../../@types/navigation';
 import { Background } from '../../components/Background';
@@ -59,7 +59,17 @@ export const Game = () => {
                     subtitle='Conecte-se e comece a jogar!'
                 />
 
-                <DouCard data={gameAds[0]} />
+                <FlatList
+                    style={styles.contentContainer}
+                    data={gameAds}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => (
+                        <DouCard data={item} onConnect={() => { }} />
+                    )}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={styles.contentList}
+                />
 
             </SafeAreaView>
         </Background>

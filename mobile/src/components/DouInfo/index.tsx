@@ -12,11 +12,12 @@ export const DouInfo = ({ label, value, colorValue = THEME.COLORS.TEXT }: Props)
 
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>
+            <Text style={styles.label} numberOfLines={1}>
                 {label}
             </Text>
             <Text
                 style={[styles.value, { color: colorValue }]}
+                numberOfLines={1}
             >
                 {value}
             </Text>
