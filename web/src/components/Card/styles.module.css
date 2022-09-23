@@ -1,15 +1,15 @@
 .container {
-    @apply relative rounded-lg overflow-hidden;
+    @apply relative rounded-lg overflow-hidden hover:cursor-pointer;
 }
 
-.container div {
+/* .container > div {
     @apply w-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 left-0 right-0;
-}
+} */
 
 .container div strong {
-    @apply font-bold text-white block;
+    @apply block h-4 overflow-hidden text-sm font-bold text-white truncate md:text-base md:h-6;
 }
 
 .container div span {
-    @apply text-zinc-300 text-sm block;
+    @apply mt-1 overflow-hidden text-xs truncate text-zinc-300 md:text-sm;
 }
